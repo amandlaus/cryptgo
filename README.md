@@ -2,13 +2,13 @@
 
 `cryptgo` is a simple go library for aes encryption and decryption using aes-gcm mode. aes-gcm is a secure, authenticated encryption mode that combines encryption and integrity checking, making it ideal for secure data storage and transmission.
 
-## features
+## Features
 
 - aes-256 encryption and decryption
 - aes-gcm mode for authenticated encryption
-- easy-to-use api
+- Easy-to-use api
 
-## installation
+## Installation
 
 you can download `cryptgo` by running the following command:
 
@@ -16,9 +16,9 @@ you can download `cryptgo` by running the following command:
 go get -u github.com/amandlaus/cryptgo
 ```
 
-# example usage
+# Example Usage
 
-here's a complete example showing how to encrypt and decrypt text:
+Here's a complete example showing how to encrypt and decrypt text:
 
 ```go
 package main
@@ -60,9 +60,9 @@ func main() {
 }
 ```
 
-# generating encryption parameters
+# Generating Encryption Parameters
 
-to generate encryption parameters, consider using the following code:
+To generate encryption parameters, consider using the following code:
 
 **scripts/gen_encryption_params.go**
 
@@ -79,7 +79,7 @@ import (
 )
 
 func main() {
-	keylength := flag.int("keylen", 32, "length of the key in bytes")
+	keylength := flag.int("length", 32, "length of the key in bytes")
 	flag.parse()
 
 	if *keylength <= 0 {
@@ -98,42 +98,42 @@ func main() {
 }
 ```
 
-## you may then run the following commands:
+## You May Then Run The Following Commands:
 
-### for generating encryption key:
+### For Generating Encryption Key:
 
 ```sh
 go run scripts/gen_encryption_params.go -length=32
 ```
 
-### for generating fixed nonce:
+### For Generating Fixed Nonce:
 
 ```sh
 go run scripts/gen_encryption_params.go -length=12
 ```
 
-**note**: store encryption key and fixed nonce in .env file
+**NOTE**: Store encryption key and fixed nonce in .env file
 
-# error handling
+# Error Handling
 
-the methods will return the following cases
+The methods will return the following cases
 
-- **invalid key format**: when the provided key does not conform to the expected 32-byte hexadecimal format.
-- **encryption or decryption failures**: if an error occurs during the encryption or decryption process, such as an incorrect ciphertext or decryption failure.
-- **incorrect ciphertext length**: when the length of the ciphertext is shorter than the required nonce size or otherwise invalid for proper decryption.
+- **Invalid Key Format**: When the provided key does not conform to the expected 32-byte hexadecimal format.
+- **Encryption or Decryption Failures**: If an error occurs during the encryption or decryption process, such as an incorrect ciphertext or decryption failure.
+- **Incorrect Ciphertext Length**: When the length of the ciphertext is shorter than the required nonce size or otherwise invalid for proper decryption.
 
-# contributing
+# Contributing
 
-feel free to open issues or pull requests to improve the library. contributions are welcome!
+Feel free to open issues or pull requests to improve the library. contributions are welcome!
 
-please refer to the [contributing.md](contributing.md) file for more details on how to contribute.
+Please refer to the [contributing.md](contributing.md) file for more details on how to contribute.
 
-## license
+## License
 
-this library is released under the mit license. see the [license](license) file for more details.
+This library is released under the mit license. see the [license](license) file for more details.
 
-## code of conduct
+## Code of Conduct
 
-feel free to open issues or pull requests to improve the library. contributions are welcome!
+Feel free to open issues or pull requests to improve the library. contributions are welcome!
 
-please adhere to our [code of conduct](code_of_conduct.md) when contributing to the project.
+Please adhere to our [code of conduct](code_of_conduct.md) when contributing to the project.

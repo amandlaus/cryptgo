@@ -79,22 +79,22 @@ import (
 )
 
 func main() {
-	keylength := flag.int("length", 32, "length of the key in bytes")
-	flag.parse()
+	keylength := flag.Int("length", 32, "length of the key in bytes")
+	flag.Parse()
 
 	if *keylength <= 0 {
-		fmt.println("key length must be a positive integer.")
-		os.exit(1)
+		fmt.Println("key length must be a positive integer.")
+		os.Exit(1)
 	}
 
 	// generate key with specified length
 	key := make([]byte, *keylength)
-	_, err := rand.read(key)
+	_, err := rand.Read(key)
 	if err != nil {
-		log.fatal(err)
+		log.Fatal(err)
 	}
 
-	fmt.println(hex.encodetostring(key))
+	fmt.Println(hex.EncodeToString(key))
 }
 ```
 
